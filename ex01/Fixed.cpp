@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:45:39 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/25 10:37:18 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/10/25 18:45:00 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ Fixed::Fixed(const Fixed& obj) {
 }
 
 int		Fixed::getRawBits( void ) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->fixedPoint);
 }
 
@@ -43,25 +42,25 @@ Fixed	Fixed::operator=( const Fixed& right ) {
 }
 
 Fixed::Fixed( const int param ) : fixedPoint(param << fractBits) {
-	std::cout << "Int constructor called" << param<< std::endl;
+	std::cout << "Int constructor called" << fixedPoint << std::endl;
 }
 
-Fixed::Fixed( const float param ) {
-	std::cout << "Float constructor called" << param << std::endl;
+Fixed::Fixed( const float param ) :  fixedPoint((int)roundf(param * (1 << fractBits))) {
+	std::cout << "Float constructor called" << fixedPoint << std::endl;
 }
 
 float	Fixed::toFloat( void ) const {
 	float	result;
-	
-	result = (float)(this->fixedPoint) / (1 << this->fractBits);
+
+	result = static_cast<float>(fixedPoint) / (1 << fractBits);
 	return (result);
 }
 
 int		Fixed::toInt( void ) const {
-	return (1337);
+	return ((int)(roundf((float)fixedPoint / (1 << fractBits))));
 }
 
 std::ostream&	operator<<( std::ostream& COUT, const Fixed& right ) {
-    COUT << right.getRawBits();
+    COUT << right.toFloat();
     return (COUT);
 }
