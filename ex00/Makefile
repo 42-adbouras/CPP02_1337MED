@@ -6,7 +6,7 @@
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 22:49:26 by adbouras          #+#    #+#              #
-#    Updated: 2024/10/23 12:17:33 by adbouras         ###   ########.fr        #
+#    Updated: 2024/10/26 16:56:08 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CC		= c++
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-NAME	= ocf
+NAME	= exe
 
 SRC		= main.cpp Fixed.cpp
 

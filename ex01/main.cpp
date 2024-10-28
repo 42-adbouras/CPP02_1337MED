@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:45:47 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/25 18:36:01 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/10/28 09:11:01 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int
 main( void ) {
+
 	Fixed 		a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );

@@ -6,11 +6,11 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:45:39 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/25 18:45:00 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/10/28 09:24:59 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include "Fixed.hpp"
+#include "Fixed.hpp"
 
 const int	Fixed::fractBits = 8;
 
@@ -41,7 +41,7 @@ Fixed	Fixed::operator=( const Fixed& right ) {
 	return (*this);
 }
 
-Fixed::Fixed( const int param ) : fixedPoint(param << fractBits) {
+Fixed::Fixed( const int param ) : fixedPoint(param << (1 * fractBits)) {
 	std::cout << "Int constructor called" << fixedPoint << std::endl;
 }
 
@@ -57,7 +57,7 @@ float	Fixed::toFloat( void ) const {
 }
 
 int		Fixed::toInt( void ) const {
-	return ((int)(roundf((float)fixedPoint / (1 << fractBits))));
+	return (static_cast<int>(roundf(static_cast<float>(fixedPoint) / (1 << fractBits))));
 }
 
 std::ostream&	operator<<( std::ostream& COUT, const Fixed& right ) {
