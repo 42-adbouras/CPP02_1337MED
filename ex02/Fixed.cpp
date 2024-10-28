@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 17:01:04 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/28 13:58:53 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/10/28 20:06:06 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,12 @@ Fixed::Fixed( const int param ) : fixedPoint(param << fractBits) {
 	std::cout << "Int constructor called" << fixedPoint << std::endl;
 }
 
-Fixed::Fixed( const float param ) :  fixedPoint((int)roundf(param * (1 << fractBits))) {
+Fixed::Fixed( const float param ) : fixedPoint((int)roundf(param * (1 << fractBits))) {
 	std::cout << "Float constructor called" << fixedPoint << std::endl;
 }
 
 float	Fixed::toFloat( void ) const {
-	float	result;
-
-	result = static_cast<float>(fixedPoint) / (1 << fractBits);
-	return (result);
+	return ((float)(fixedPoint) / (1 << fractBits));
 }
 
 int		Fixed::toInt( void ) const {
@@ -105,7 +102,7 @@ Fixed	Fixed::operator/( const Fixed& right ) const {
 }
 
 Fixed&	Fixed::operator++( void ) {
-	setRawBits(fixedPoint + (1 << fractBits)); return (*this); // (1 << fractBits)
+	setRawBits(fixedPoint + (1 << fractBits)); return (*this);
 }
 
 Fixed	Fixed::operator++( int ) {
@@ -115,7 +112,7 @@ Fixed	Fixed::operator++( int ) {
 }
 
 Fixed&	Fixed::operator--( void ) {
-	setRawBits(fixedPoint - (1 << fractBits)); return (*this); // (1 << fractBits)
+	setRawBits(fixedPoint - (1 << fractBits)); return (*this);
 }
 
 Fixed	Fixed::operator--( int ) {
@@ -128,14 +125,14 @@ Fixed&	Fixed::min( Fixed& left, Fixed& right) {
 	return (left < right ? left : right); 
 }
 
-Fixed&	Fixed::min( const Fixed& left, const Fixed& right) {
+const Fixed&	Fixed::min( const Fixed& left, const Fixed& right) {
 	return (left < right ? left : right); 
 }
-// int	main( void ) {
-// 	Fixed	a(1);
 
-// 	std::cout << ">> " << a << std::endl;
-// 	a++;
-// 	std::cout << ">> " << a << std::endl;
-// 	return (0);
-// }
+Fixed&	Fixed::max( Fixed& left, Fixed& right) {
+	return (left > right ? left : right); 
+}
+
+const Fixed&	Fixed::max( const Fixed& left, const Fixed& right) {
+	return (left > right ? left : right); 
+}
