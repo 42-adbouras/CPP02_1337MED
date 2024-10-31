@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:05:35 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/25 09:30:29 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/10/31 10:57:50 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include <string>
+
+#define DEBUG	1
 
 class Fixed
 {

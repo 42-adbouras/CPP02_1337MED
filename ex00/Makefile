@@ -6,7 +6,7 @@
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 22:49:26 by adbouras          #+#    #+#              #
-#    Updated: 2024/10/26 16:56:08 by adbouras         ###   ########.fr        #
+#    Updated: 2024/10/31 12:53:36 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME	= exe
 
 SRC		= main.cpp Fixed.cpp
 
-NCL		= Fixed.hpp
+NCLD	= Fixed.hpp
 
 OBJ_DIR = objects/
 
@@ -35,11 +35,11 @@ all:$(NAME)
 
 $(OBJ_DIR)%.o:%.cpp $(NCLD)
 	@mkdir -p $(OBJ_DIR)
-	@echo "$(YLW)[Genarating object file $@]$(RST)\r\c"
+	@echo "$(YLW)[Genarating object file $@]$(RST)$(RST)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	@echo "$(YLW)[Compiling $(NAME)]$(RST)\r\c"
+	@echo "$(YLW)[Compiling $(NAME)]$(RST)$(RST)"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(GRN)[Compiled successfully, to run, execute: ./$(NAME)]$(RST)"
 

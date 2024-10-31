@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 17:01:04 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/30 11:53:15 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:19:24 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,17 +135,17 @@ Fixed	Fixed::operator--( int ) {
 }
 
 Fixed&	Fixed::min( Fixed& left, Fixed& right ) {
-	return (left < right ? left : right); 
+	return ((left < right) ? left : right); 
 }
 
 const Fixed&	Fixed::min( const Fixed& left, const Fixed& right ) {
-	return (left < right ? left : right); 
+	return ((left < right) ? left : right); 
 }
 
 Fixed&	Fixed::max( Fixed& left, Fixed& right ) {
-	return (left > right ? left : right); 
+	return ((left > right) ? left : right); 
 }
 
 const Fixed&	Fixed::max( const Fixed& left, const Fixed& right ) {
-	return (left > right ? left : right); 
+	return ((left > right) ? left : right); 
 }

@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 09:36:37 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/30 21:02:31 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:05:48 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 Fixed	ft_area(Point a, Point b, Point c) {	// area = (a_x(b_y - c_y) + b_x(c_y - a_y) + c_x(a_y - b_y)) / 2
 	Fixed	area;
 	
-	area = a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY())
-			+ c.getX() * (a.getY() - b.getY());
+	area = (a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY())
+			+ c.getX() * (a.getY() - b.getY())) / 2;
 	if (area < 0)
-		area = area * Fixed(0.5f) * (-1);
-	area = area * Fixed(0.5f);
+		area = area * (-1);
 	return (area);
 }
 
