@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/26 16:57:44 by adbouras          #+#    #+#              #
-#    Updated: 2024/10/30 11:36:54 by adbouras         ###   ########.fr        #
+#    Created: 2024/10/29 13:36:15 by adbouras          #+#    #+#              #
+#    Updated: 2024/10/29 13:37:26 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,9 @@ CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 NAME	= exe
 
-SRC		= main.cpp Fixed.cpp
+SRC		= Fixed.cpp main.cpp Point.cpp bsp.cpp
 
-NCLD	= Fixed.hpp
+NCL		= Fixed.hpp Point.hpp
 
 OBJ_DIR = objects/
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 17:00:19 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/30 11:47:35 by adbouras         ###   ########.fr       */
+/*   Created: 2024/10/29 13:00:24 by adbouras          #+#    #+#             */
+/*   Updated: 2024/10/30 12:32:30 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,20 @@ private:
 	int					fixedPoint;
 	static const int	fractBits;
 public:
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
-
 	Fixed	( void );
 	Fixed	( const int param );
 	Fixed	( const Fixed& obj );
 	Fixed	( const float param );
 	~Fixed	( void );
 
-	int		toInt( void ) const;
-	float	toFloat( void ) const;
+	int		getRawBits( void ) const;
+	void	setRawBits( int const raw );
+
+	int		toInt( void )	const;
+	float	toFloat( void )	const;
 
 	Fixed	operator=( const Fixed& right );
 
-	// new
 	bool	operator>( const Fixed& right )		const;
 	bool	operator<( const Fixed& right )		const;
 	bool	operator>=( const Fixed& right )	const;

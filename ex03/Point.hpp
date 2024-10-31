@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 17:01:25 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/30 11:52:55 by adbouras         ###   ########.fr       */
+/*   Created: 2024/10/29 12:56:57 by adbouras          #+#    #+#             */
+/*   Updated: 2024/10/30 14:40:36 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "Fixed.hpp"
 
-int	main( void ) {
+class Point
+{
+private:
+	const Fixed	x;
+	const Fixed y;
+public:
+	Point ( void );
+	Point ( const float a, const float b );
+	Point ( const Point& obj );
+	~Point ( void );
+	Point&	operator=(Point const &other);
 
-	Fixed		a;
-	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed	getX( void ) { return (this->x); }
+	Fixed	getY( void ) { return (this->y); }
+};
 
-	std::cout << a					<< std::endl;
-	std::cout << ++a				<< std::endl;
-	std::cout << a					<< std::endl;
-	std::cout << a++				<< std::endl;	
-	std::cout << a					<< std::endl;
-
-	std::cout << b					<< std::endl;
-
-	std::cout << Fixed::max( a, b )	<< std::endl;
-
-	return 0;
-}
+bool bsp( Point const a, Point const b, Point const c, Point const point);

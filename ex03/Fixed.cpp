@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 17:01:04 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/30 11:53:15 by adbouras         ###   ########.fr       */
+/*   Created: 2024/10/29 13:01:06 by adbouras          #+#    #+#             */
+/*   Updated: 2024/10/30 12:27:43 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Fixed	Fixed::operator=( const Fixed& right ) {
 
 Fixed::Fixed( const int param ) : fixedPoint(param << fractBits) {
 	if (DEBUG)
-		std::cout << "Int constructor called " << fixedPoint << std::endl;
+		std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed( const float param ) : fixedPoint((int)roundf(param * (1 << fractBits))) {
