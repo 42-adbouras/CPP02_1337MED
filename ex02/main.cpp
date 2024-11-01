@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 17:01:25 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/30 11:52:55 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/11/01 12:08:35 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	main( void ) {
 
 	std::cout << Fixed::max( a, b )	<< std::endl;
 
-	return 0;
+	return (0);
 }

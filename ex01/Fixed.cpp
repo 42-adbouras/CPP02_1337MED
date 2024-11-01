@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:45:39 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/31 11:16:24 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/11/01 12:03:45 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Fixed::~Fixed( void ) {
 		std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& obj) {
+Fixed::Fixed( const Fixed& obj ) {
 	if (DEBUG)
 		std::cout << "Copy constructor called" << std::endl;
 	this->fixedPoint = obj.getRawBits();
@@ -56,10 +56,7 @@ Fixed::Fixed( const float param ) :  fixedPoint((int)roundf(param * (1 << fractB
 }
 
 float	Fixed::toFloat( void ) const {
-	float	result;
-
-	result = (float)(fixedPoint) / (1 << fractBits);
-	return (result);
+	return ((float)(fixedPoint) / (1 << fractBits));
 }
 
 int		Fixed::toInt( void ) const {

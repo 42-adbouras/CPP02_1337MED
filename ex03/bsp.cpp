@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 09:36:37 by adbouras          #+#    #+#             */
-/*   Updated: 2024/10/31 11:05:48 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/11/01 12:14:42 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ Fixed	ft_area(Point a, Point b, Point c) {	// area = (a_x(b_y - c_y) + b_x(c_y -
 	
 	area = (a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY())
 			+ c.getX() * (a.getY() - b.getY())) / 2;
-	if (area < 0)
-		area = area * (-1);
-	return (area);
+	return ((area < 0) ? area * (-1) : area);
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const point) {
@@ -28,6 +26,6 @@ bool bsp( Point const a, Point const b, Point const c, Point const point) {
 	Fixed	P3 = ft_area(point, b, c);
 	Fixed	P4 = ft_area(point, c, a);
 
-	bool	hasPos = (P1 > 0) && (P2 > 0) && (P3 > 0) && (P4 > 0);
-	return (P1 == P2 + P3 + P4 && hasPos);
+	bool	valid = (P1 > 0) && (P2 > 0) && (P3 > 0) && (P4 > 0);
+	return (P1 == P2 + P3 + P4 && valid);
 }
