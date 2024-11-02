@@ -3,6 +3,7 @@
 	- Orthodox Canonical Form
 	- Fixed Point representation
 	- Folating Point representation
+   	- Class operatores overloading
 - Ex00
 
 # Introduction
@@ -20,7 +21,8 @@ Going forward, our classes should adhere to the Orthodox Canonical Form unless o
 
 **`Example:`** In a fixed-point format with 8 bits for the integer part and 8 bits for the fractional part, the value 5.25 would be stored as:\
 	- `Integer:` 00000101 (5 in binary)\
-	- `Fractional:` 01000000 (0.25 in binary, since 0.25 × 2<sup>8</sup> = 64)
+	- `Fractional:` 01000000 (0.25 in binary, since 0.25 × 2<sup>8</sup> = 64)\
+ so the fixed point value would be `1344`, `0000010101000000` in binary.
  
 `Advantages:`\
 	- Simple arithmetic operations (addition, subtraction).\
