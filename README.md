@@ -56,3 +56,6 @@ For the number -5.75, it might be represented as:\
 	- `Floating-point` offers flexibility and a wide range but at the cost of complexity and potential precision issues.
 
 Both representations have their use cases depending on the needs of the application, such as embedded systems favoring fixed-point for speed and memory efficiency, while scientific computing often uses floating-point for its range and precision.
+
+- **Class operatores overloading:**\
+Operator overloading in C++ allows you to redefine the way operators work for user-defined types (such as classes). This can make your classes more intuitive to use and can allow them to interact with other types in a natural way.
