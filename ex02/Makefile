@@ -6,7 +6,7 @@
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 16:57:44 by adbouras          #+#    #+#              #
-#    Updated: 2024/10/31 12:53:10 by adbouras         ###   ########.fr        #
+#    Updated: 2024/11/02 10:08:55 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,11 +35,11 @@ all:$(NAME)
 
 $(OBJ_DIR)%.o:%.cpp $(NCLD)
 	@mkdir -p $(OBJ_DIR)
-	@echo "$(YLW)[Genarating object file $@]$(RST)$(RST)"
+	@echo "$(YLW)[Genarating object file $@]$(RST)$(CLN)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	@echo "$(YLW)[Compiling $(NAME)]$(RST)$(RST)"
+	@echo "$(YLW)[Compiling $(NAME)]$(RST)$(CLN)"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(GRN)[Compiled successfully, to run, execute: ./$(NAME)]$(RST)"
 

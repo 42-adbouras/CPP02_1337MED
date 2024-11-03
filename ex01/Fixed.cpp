@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:45:39 by adbouras          #+#    #+#             */
-/*   Updated: 2024/11/01 12:03:45 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/11/02 13:20:42 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ Fixed	Fixed::operator=( const Fixed& right ) {
 
 Fixed::Fixed( const int param ) : fixedPoint(param << (1 * fractBits)) {
 	if (DEBUG)
-		std::cout << "Int constructor called" << std::endl;
+		std::cout << "Int constructor called" << fixedPoint << std::endl;
 }
 
-Fixed::Fixed( const float param ) :  fixedPoint((int)roundf(param * (1 << fractBits))) {
+Fixed::Fixed( const float param ) : fixedPoint((int)roundf(param * (1 << fractBits))) {
 	if (DEBUG)
 		std::cout << "Float constructor called" << std::endl;
 }
